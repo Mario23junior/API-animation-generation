@@ -1,5 +1,9 @@
 package com.project.animation.Controller;
 
+import java.util.List;
+
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -58,6 +62,23 @@ public class AnimationController {
 	                        animation.setId(updateAnima.getId());
 	                        animationRepository.save(animation);
 	                        return updateAnima;
-	                    });
+	                    }).orElseThrow( () -> new ResponseStatusException(HttpStatus.NO_CONTENT,"Cliente não encontrado"));
 	}
+	
+	@GetMapping
+	public List<Animation> buscarTodos(Animation findAnimation) {
+		ExampleMatcher compara = ExampleMatcher
+				                      .matching()
+				                      .withIgnoreCase()
+				                      .withStringMatcher(ExampleMatcher.StringMatcher.CONTAINING);
+		Example<Animation> example = Example.of(findAnimation, compara);
+		return animationRepository.findAll(example);
+	}
+	
+	
+	
+	
+	
+	
+	
 }
