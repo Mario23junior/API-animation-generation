@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.project.animation.Model.Information;
 
 @Repository
-public interface informationRepository extends JpaRepository<Information, Integer> {
+public interface InformationRepository extends JpaRepository<Information, Integer> {
 
 }

@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import com.project.animation.Model.Animation;
 @Repository
-public interface animationRepository extends JpaRepository<Animation, Integer> {
+public interface AnimationRepository extends JpaRepository<Animation, Integer> {
 
 }
