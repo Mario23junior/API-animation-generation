@@ -1,6 +1,7 @@
 package com.project.animation.Controller;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,5 +37,16 @@ public class AnimationController {
 			      .orElseThrow( () ->  new ResponseStatusException(HttpStatus.NO_CONTENT,"Desculpe animation não encontrada"));
 	}
 	
+	@DeleteMapping("/{id}")
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	public void deletaAnimation(@PathVariable Integer id) {
+		    animationRepository
+				          .findById(id)
+		                  .map(delete -> {
+		                	 animationRepository.delete(delete);
+		                	 return delete;
+		                  }).orElseThrow( () -> new ResponseStatusException(HttpStatus.NO_CONTENT,"ID não encontrado para deletação"));
+	}
+	
+	
 }
-  
