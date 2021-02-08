@@ -14,16 +14,16 @@ import com.project.animation.Repository.AnimationRepository;
 @RequestMapping("/api/gerence/animation")
 public class AnimationController {
    
-	private AnimationRepository informationRepository;
+	private AnimationRepository animationRepository;
 	
-	public AnimationController(AnimationRepository informationRepository) {
-		this.informationRepository = informationRepository;
+	public AnimationController(AnimationRepository animationRepository) {
+		this.animationRepository = animationRepository;
 	}
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public Animation salvarAnimation(@RequestBody Animation animation) {
-		return informationRepository.save(animation);
+		return animationRepository.save(animation);
 	}
 	
 }

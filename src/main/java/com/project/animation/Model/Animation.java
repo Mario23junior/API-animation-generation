@@ -11,8 +11,8 @@ public class Animation {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	private String TituloOriginal;
 	private String titulo;
+	private String TituloOriginal;
 	private String descricao;
 	
 	public Integer getId() {
