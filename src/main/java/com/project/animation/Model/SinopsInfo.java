@@ -11,7 +11,8 @@ public class SinopsInfo {
 	 @Id
 	 @GeneratedValue(strategy = GenerationType.AUTO)
 	 private Integer id;
-	 private String DataDescricao;
+	 
+  	 private String DataDeCriacao;	 
 	 private String situacao;
 	 private boolean filme;
 	 private boolean serie;
@@ -22,11 +23,11 @@ public class SinopsInfo {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getDataDescricao() {
-		return DataDescricao;
+	public String getDataDeCriacao() {
+		return DataDeCriacao;
 	}
-	public void setDataDescricao(String dataDescricao) {
-		DataDescricao = dataDescricao;
+	public void setDataDeCriacao(String dataDeCriacao) {
+		DataDeCriacao = dataDeCriacao;
 	}
 	public String getSituacao() {
 		return situacao;
