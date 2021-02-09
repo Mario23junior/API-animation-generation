@@ -73,12 +73,5 @@ public class AnimationController {
 				                      .withStringMatcher(ExampleMatcher.StringMatcher.CONTAINING);
 		Example<Animation> example = Example.of(findAnimation, compara);
 		return animationRepository.findAll(example);
-	}
-	
-	
-	
-	
-	
-	
-	
+	}	
 }
