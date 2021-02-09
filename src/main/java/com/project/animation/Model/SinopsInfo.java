@@ -1,9 +1,13 @@
 package com.project.animation.Model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 
 @Entity
 public class SinopsInfo {
@@ -12,7 +16,10 @@ public class SinopsInfo {
 	 @GeneratedValue(strategy = GenerationType.AUTO)
 	 private Integer id;
 	 
-  	 private String DataDeCriacao;	 
+	 @JsonFormat(pattern = "dd/MM/yyyy",shape = Shape.STRING)
+	 @Column(name = "data_de_criacao")
+  	 private String DataDeCriacao;
+	 
 	 private String situacao;
 	 private boolean filme;
 	 private boolean serie;
