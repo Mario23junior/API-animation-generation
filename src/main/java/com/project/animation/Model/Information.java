@@ -11,10 +11,9 @@ public class Information {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	private String dataDescricao;
 	private String genero;
-	private String quantidadeTemporada;
-	private String quantidadeDeEpisodios;
+	private Integer quantidadeTemporada;
+	private Integer quantidadeDeEpisodios;
 	
 	public Integer getId() {
 		return id;
@@ -22,28 +21,22 @@ public class Information {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getDataDescricao() {
-		return dataDescricao;
-	}
-	public void setDataDescricao(String dataDescricao) {
-		this.dataDescricao = dataDescricao;
-	}
 	public String getGenero() {
 		return genero;
 	}
 	public void setGenero(String genero) {
 		this.genero = genero;
 	}
-	public String getQuantidadeTemporada() {
+	public Integer getQuantidadeTemporada() {
 		return quantidadeTemporada;
 	}
-	public void setQuantidadeTemporada(String quantidadeTemporada) {
+	public void setQuantidadeTemporada(Integer quantidadeTemporada) {
 		this.quantidadeTemporada = quantidadeTemporada;
 	}
-	public String getQuantidadeDeEpisodios() {
+	public Integer getQuantidadeDeEpisodios() {
 		return quantidadeDeEpisodios;
 	}
-	public void setQuantidadeDeEpisodios(String quantidadeDeEpisodios) {
+	public void setQuantidadeDeEpisodios(Integer quantidadeDeEpisodios) {
 		this.quantidadeDeEpisodios = quantidadeDeEpisodios;
 	}
 	
