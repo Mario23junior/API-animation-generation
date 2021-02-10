@@ -46,9 +46,9 @@ public class SinopsInfoController {
 	public void deleteSinop(@PathVariable Integer id) {
 	     sinopsInfoRepository
 	                   .findById(id)
-	                   .map(delSino -> {
-	                	   sinopsInfoRepository.delete(delSino);
-	                	   return delSino;
+	                   .map(deleteSinopse -> {
+	                	   sinopsInfoRepository.delete(deleteSinopse);
+	                	   return deleteSinopse;
 	                   }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NO_CONTENT,"Sinopse não encontrado"));
 	}
 	
