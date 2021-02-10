@@ -1,5 +1,7 @@
 package com.project.animation.Controller;
 
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -62,4 +64,8 @@ public class SinopsInfoController {
 		                    }).orElseThrow( () -> new ResponseStatusException(HttpStatus.NO_CONTENT,"Sinops não encontrada"));
 	}
 	
+	@GetMapping
+	public List<SinopsInfo> buscarTodos(SinopsInfo sinopsInfo) {
+		return sinopsInfoRepository.findAll();
+ 	}
 }
