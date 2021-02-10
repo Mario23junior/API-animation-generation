@@ -1,6 +1,7 @@
 package com.project.animation.Controller;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,4 +38,14 @@ public class SinopsInfoController {
 		
 	}
 	
+	@DeleteMapping("/{id}")
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	public void deleteSinop(@PathVariable Integer id) {
+	     sinopsInfoRepository
+	                   .findById(id)
+	                   .map(delSino -> {
+	                	   sinopsInfoRepository.delete(delSino);
+	                	   return delSino;
+	                   }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NO_CONTENT,"Sinopse não encontrado"));
+	}
 }
