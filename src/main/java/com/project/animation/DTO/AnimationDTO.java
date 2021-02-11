@@ -1,11 +1,16 @@
 package com.project.animation.DTO;
 
+import java.util.List;
+
 public class AnimationDTO {
     
 	private Integer id;
 	private String titulo;
 	private String TituloOriginal;
 	private String descricao;
+	
+	private List<SinopseInfoDTO> sinoInfoDTO;
+	private List<InformationDTO> informationDTOs;
 	
 	public Integer getId() {
 		return id;
@@ -31,6 +36,16 @@ public class AnimationDTO {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	
-	
+	public List<SinopseInfoDTO> getSinoInfoDTO() {
+		return sinoInfoDTO;
+	}
+	public void setSinoInfoDTO(List<SinopseInfoDTO> sinoInfoDTO) {
+		this.sinoInfoDTO = sinoInfoDTO;
+	}
+	public List<InformationDTO> getInformationDTOs() {
+		return informationDTOs;
+	}
+	public void setInformationDTOs(List<InformationDTO> informationDTOs) {
+		this.informationDTOs = informationDTOs;
+	}
 }

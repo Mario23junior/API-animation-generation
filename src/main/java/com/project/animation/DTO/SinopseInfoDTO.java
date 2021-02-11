@@ -7,7 +7,7 @@ public class SinopseInfoDTO {
 	private String situacao;
 	private boolean filme;
 	private boolean serie;
-	
+
 	public Integer getId() {
 		return id;
 	}
