@@ -1,9 +1,14 @@
 package com.project.animation.Model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Information {
@@ -15,6 +20,9 @@ public class Information {
 	private Integer quantidadeTemporada;
 	private Integer quantidadeDeEpisodios;
 	
+	@OneToMany(mappedBy = "information",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+	private List<Animation> animation;
+    	
 	public Integer getId() {
 		return id;
 	}
@@ -39,8 +47,6 @@ public class Information {
 	public void setQuantidadeDeEpisodios(Integer quantidadeDeEpisodios) {
 		this.quantidadeDeEpisodios = quantidadeDeEpisodios;
 	}
-	
-	
-	
+		
 	
 }

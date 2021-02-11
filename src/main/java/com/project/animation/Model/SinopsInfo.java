@@ -1,10 +1,15 @@
 package com.project.animation.Model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
@@ -24,6 +29,9 @@ public class SinopsInfo {
 	 private boolean filme;
 	 private boolean serie;
 	 
+	 @OneToMany(mappedBy = "sinopsInfo",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+	 private List<Animation> animations;
+	  
 	public Integer getId() {
 		return id;
 	}

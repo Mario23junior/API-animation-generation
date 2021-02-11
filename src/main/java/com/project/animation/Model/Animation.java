@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Animation {
@@ -14,6 +15,12 @@ public class Animation {
 	private String titulo;
 	private String TituloOriginal;
 	private String descricao;
+	
+	@ManyToOne
+	private Information information;
+	
+	@ManyToOne
+	private SinopsInfo sinopsInfo;
 	
 	public Integer getId() {
 		return id;
@@ -38,11 +45,5 @@ public class Animation {
 	}
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
-	}
-	
-	
-	
-	
-	
-	
+	}	
 }
