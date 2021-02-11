@@ -1,6 +1,7 @@
 package com.project.animation.Controller;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -35,8 +36,16 @@ public class InformationController {
 				           .findById(id)
 				           .orElseThrow( () -> new ResponseStatusException(HttpStatus.NO_CONTENT,"Dados não encontrados"));
 	}
- 	
 	
-	
-	
+	@DeleteMapping("/{id}")
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	public void delete(@PathVariable Integer id) {
+		informationRepository
+		                .findById(id)
+		                .map(deleteInformation -> {
+		                     informationRepository.deleteById(id);
+		                     return deleteInformation;
+		                }).orElseThrow( () -> new ResponseStatusException(HttpStatus.NO_CONTENT,"Information não encontrado"));
+		
+	}
 }
