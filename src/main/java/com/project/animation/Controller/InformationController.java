@@ -68,5 +68,6 @@ public class InformationController {
 	@GetMapping
 	public List<Information> listarTodoOsRegistro(Information information) {
 		return informationRepository.findAll();
+				             
 	}
 }
