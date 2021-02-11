@@ -61,7 +61,7 @@ public class InformationController {
 		                	  information.setId(updateInfo.getId());
 		                	  informationRepository.save(information);
 		                	  return updateInfo;
-		                 });
+		                 }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NO_CONTENT,"informação não encontrda"));
 	}
 	
 	
