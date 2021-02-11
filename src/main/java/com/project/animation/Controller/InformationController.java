@@ -1,5 +1,7 @@
 package com.project.animation.Controller;
 
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -60,5 +62,11 @@ public class InformationController {
 		                	  informationRepository.save(information);
 		                	  return updateInfo;
 		                 });
+	}
+	
+	
+	@GetMapping
+	public List<Information> listarTodoOsRegistro(Information information) {
+		return informationRepository.findAll();
 	}
 }
