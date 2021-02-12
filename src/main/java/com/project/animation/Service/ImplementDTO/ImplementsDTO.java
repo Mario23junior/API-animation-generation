@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.project.animation.Model.Animation;
+import com.project.animation.DTO.AnimationDTO;
 import com.project.animation.Repository.AnimationRepository;
 import com.project.animation.Service.ServiceDTOImplemet;
 
@@ -18,7 +18,7 @@ public class ImplementsDTO implements ServiceDTOImplemet{
 	}
 	
 	@Override
-	public List<Animation> ListAll() {
+	public List<AnimationDTO> ListAll() {
 		return null;
 	}
 
