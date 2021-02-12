@@ -1,7 +1,5 @@
 package com.project.animation.DTO;
 
-import java.util.List;
-
 public class AnimationDTO {
     
 	private Integer id;
@@ -9,8 +7,16 @@ public class AnimationDTO {
 	private String TituloOriginal;
 	private String descricao;
 	
-	private List<SinopseInfoDTO> sinoInfoDTO;
-	private List<InformationDTO> informationDTOs;
+	private String DataDeCriacao;
+	private String situacao;
+	private boolean filme;
+	private boolean serie;
+	
+	
+	private String genero;
+	private Integer quantidadeTemporada;
+	private Integer quantidadeDeEpisodios;
+	
 	
 	public Integer getId() {
 		return id;
@@ -36,16 +42,48 @@ public class AnimationDTO {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public List<SinopseInfoDTO> getSinoInfoDTO() {
-		return sinoInfoDTO;
+	public String getDataDeCriacao() {
+		return DataDeCriacao;
 	}
-	public void setSinoInfoDTO(List<SinopseInfoDTO> sinoInfoDTO) {
-		this.sinoInfoDTO = sinoInfoDTO;
+	public void setDataDeCriacao(String dataDeCriacao) {
+		DataDeCriacao = dataDeCriacao;
 	}
-	public List<InformationDTO> getInformationDTOs() {
-		return informationDTOs;
+	public String getSituacao() {
+		return situacao;
 	}
-	public void setInformationDTOs(List<InformationDTO> informationDTOs) {
-		this.informationDTOs = informationDTOs;
+	public void setSituacao(String situacao) {
+		this.situacao = situacao;
 	}
+	public boolean isFilme() {
+		return filme;
+	}
+	public void setFilme(boolean filme) {
+		this.filme = filme;
+	}
+	public boolean isSerie() {
+		return serie;
+	}
+	public void setSerie(boolean serie) {
+		this.serie = serie;
+	}
+	public String getGenero() {
+		return genero;
+	}
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+	public Integer getQuantidadeTemporada() {
+		return quantidadeTemporada;
+	}
+	public void setQuantidadeTemporada(Integer quantidadeTemporada) {
+		this.quantidadeTemporada = quantidadeTemporada;
+	}
+	public Integer getQuantidadeDeEpisodios() {
+		return quantidadeDeEpisodios;
+	}
+	public void setQuantidadeDeEpisodios(Integer quantidadeDeEpisodios) {
+		this.quantidadeDeEpisodios = quantidadeDeEpisodios;
+	}
+	
+	
 }

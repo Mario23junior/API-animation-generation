@@ -45,5 +45,19 @@ public class Animation {
 	}
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+	public Information getInformation() {
+		return information;
+	}
+	public void setInformation(Information information) {
+		this.information = information;
+	}
+	public SinopsInfo getSinopsInfo() {
+		return sinopsInfo;
+	}
+	public void setSinopsInfo(SinopsInfo sinopsInfo) {
+		this.sinopsInfo = sinopsInfo;
 	}	
+	
+	
 }
