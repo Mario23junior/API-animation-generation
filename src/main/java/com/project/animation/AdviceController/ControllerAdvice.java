@@ -5,9 +5,9 @@ import java.util.stream.Collectors;
 
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-@RestController
+@RestControllerAdvice
 public class ControllerAdvice {
    
 	@ExceptionHandler(MethodArgumentNotValidException.class)
