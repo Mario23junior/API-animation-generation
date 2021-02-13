@@ -6,6 +6,7 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
 @Configuration
 public class ModelInternacionalidade {
@@ -18,5 +19,13 @@ public class ModelInternacionalidade {
 		  messageSource.setDefaultLocale(Locale.getDefault());
 		  
 		  return messageSource;
+	}
+	
+	@Bean
+	public LocalValidatorFactoryBean validatorFactoryBean() {
+		LocalValidatorFactoryBean referenciandoData = new LocalValidatorFactoryBean();
+		referenciandoData.setValidationMessageSource(messageSource());
+		
+		return referenciandoData;
 	}
 }
