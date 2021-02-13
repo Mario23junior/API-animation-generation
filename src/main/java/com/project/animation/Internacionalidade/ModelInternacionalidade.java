@@ -1,5 +1,22 @@
 package com.project.animation.Internacionalidade;
 
-public class ModelInternacionalidade {
+import java.util.Locale;
 
+import org.springframework.context.MessageSource;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+
+@Configuration
+public class ModelInternacionalidade {
+    
+	@Bean
+	public MessageSource messageSource() {
+		  ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
+		  messageSource.setBasename("classpath:messagesErros");
+		  messageSource.setDefaultEncoding("ISO-8859-1");
+		  messageSource.setDefaultLocale(Locale.getDefault());
+		  
+		  return messageSource;
+	}
 }
