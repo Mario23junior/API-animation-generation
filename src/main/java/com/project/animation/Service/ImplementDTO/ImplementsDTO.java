@@ -39,7 +39,7 @@ public class ImplementsDTO implements ServiceDTOImplemet{
 	     
 	     SinopsInfo sinopInfo = animation.getSinopsInfo();
 	     animaDTO.setDataDeCriacao(sinopInfo.getDataDeCriacao());
-	     animaDTO.setSituacao(sinopInfo.getDataDeCriacao());
+	     animaDTO.setSituacao(sinopInfo.getSituacao());
 	     animaDTO.setFilme(sinopInfo.isFilme());
 	     animaDTO.setSerie(sinopInfo.isSerie());
 	     

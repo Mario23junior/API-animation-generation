@@ -12,7 +12,6 @@ public class AnimationDTO {
 	private boolean filme;
 	private boolean serie;
 	
-	
 	private String genero;
 	private Integer quantidadeTemporada;
 	private Integer quantidadeDeEpisodios;
