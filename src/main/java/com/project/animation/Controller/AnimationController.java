@@ -2,6 +2,8 @@ package com.project.animation.Controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.http.HttpStatus;
@@ -31,7 +33,7 @@ public class AnimationController {
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public Animation salvarAnimation(@RequestBody Animation animation) {
+	public Animation salvarAnimation(@RequestBody @Valid Animation animation) {
 		return animationRepository.save(animation);
 	}
 	
@@ -55,7 +57,7 @@ public class AnimationController {
 	
 	@PutMapping("/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void updateAnimation(@PathVariable Integer id,@RequestBody Animation animation) {
+	public void updateAnimation(@PathVariable Integer id, @Valid @RequestBody Animation animation) {
 	    animationRepository
 	                    .findById(id)
 	                    .map(updateAnima -> {

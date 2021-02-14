@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Animation {
@@ -12,8 +13,14 @@ public class Animation {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+	
+	@NotEmpty(message = "{campo.titulo}")
 	private String titulo;
+	
+	@NotEmpty(message = "{campo.tituloOriginal}")
 	private String TituloOriginal;
+	
+	@NotEmpty(message = "{campo.descricao}")
 	private String descricao;
 	
 	@ManyToOne
