@@ -2,6 +2,8 @@ package com.project.animation.Controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,7 +31,7 @@ public class SinopsInfoController {
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public SinopsInfo salvarSinosInfo(@RequestBody SinopsInfo sinopsInfo) {
+	public SinopsInfo salvarSinosInfo(@RequestBody @Valid SinopsInfo sinopsInfo) {
 		return sinopsInfoRepository.save(sinopsInfo);
 	}
 	
@@ -54,7 +56,7 @@ public class SinopsInfoController {
 	
 	@PutMapping("/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void UpdateSinops(@PathVariable Integer id, @RequestBody SinopsInfo sinoInfo) {
+	public void UpdateSinops(@PathVariable Integer id,@Valid @RequestBody SinopsInfo sinoInfo) {
 		    sinopsInfoRepository
 		                    .findById(id)
 		                    .map(update -> {

@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
@@ -21,11 +22,14 @@ public class SinopsInfo {
 	 @GeneratedValue(strategy = GenerationType.AUTO)
 	 private Integer id;
 	 
+	 @NotEmpty(message = "{campo.dataDeCriacao}")
 	 @JsonFormat(pattern = "dd/MM/yyyy",shape = Shape.STRING)
 	 @Column(name = "data_de_criacao")
   	 private String DataDeCriacao;
 	 
+	 @NotEmpty(message = "{campo.situacao}")
 	 private String situacao;
+	 
 	 private boolean filme;
 	 private boolean serie;
 	 
