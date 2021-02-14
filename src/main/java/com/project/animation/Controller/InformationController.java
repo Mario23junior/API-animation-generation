@@ -2,6 +2,8 @@ package com.project.animation.Controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,7 +31,7 @@ public class InformationController {
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public Information salvarDados(@RequestBody Information information) {
+	public Information salvarDados(@RequestBody @Valid Information information) {
 		return informationRepository.save(information);
 	}
 	
@@ -54,7 +56,7 @@ public class InformationController {
 	
 	@PutMapping("/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void updateInformation(@RequestBody Information information, @PathVariable Integer id) {
+	public void updateInformation(@RequestBody @Valid Information information, @PathVariable Integer id) {
 		  informationRepository
 		                 .findById(id)
 		                 .map(updateInfo -> {

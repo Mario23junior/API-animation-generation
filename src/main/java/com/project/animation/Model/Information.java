@@ -9,6 +9,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.DecimalMax;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Information {
@@ -16,8 +19,16 @@ public class Information {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+	
+	@NotEmpty(message = "{campo.genero}")
 	private String genero;
+    
+	@DecimalMax("12000.00")
+	@DecimalMin("1")
 	private Integer quantidadeTemporada;
+    
+	@DecimalMax("2000.00")
+	@DecimalMin("1")
 	private Integer quantidadeDeEpisodios;
 	
 	@OneToMany(mappedBy = "information",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
