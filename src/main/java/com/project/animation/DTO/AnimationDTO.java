@@ -14,8 +14,7 @@ public class AnimationDTO {
 	
 	private String genero;
 	private Integer quantidadeTemporada;
-	private Integer quantidadeDeEpisodios;
-	
+	private Integer quantidadeDeEpisodios; 
 	
 	public Integer getId() {
 		return id;
@@ -82,7 +81,5 @@ public class AnimationDTO {
 	}
 	public void setQuantidadeDeEpisodios(Integer quantidadeDeEpisodios) {
 		this.quantidadeDeEpisodios = quantidadeDeEpisodios;
-	}
-	
-	
+	}	
 }

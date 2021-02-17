@@ -3,7 +3,6 @@ package com.project.animation.Model;
 import java.util.List;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -24,7 +23,6 @@ public class SinopsInfo {
 	 
 	 @NotEmpty(message = "{campo.dataDeCriacao}")
 	 @JsonFormat(pattern = "dd/MM/yyyy",shape = Shape.STRING)
-	 @Column(name = "data_de_criacao")
   	 private String DataDeCriacao;
 	 
 	 @NotEmpty(message = "{campo.situacao}")

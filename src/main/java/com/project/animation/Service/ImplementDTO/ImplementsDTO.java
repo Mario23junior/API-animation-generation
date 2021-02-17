@@ -47,7 +47,7 @@ public class ImplementsDTO implements ServiceDTOImplemet{
 	     animaDTO.setGenero(infor.getGenero());
 	     animaDTO.setQuantidadeTemporada(infor.getQuantidadeTemporada());
 	     animaDTO.setQuantidadeDeEpisodios(infor.getQuantidadeDeEpisodios());
-	    
+	      
 	     return animaDTO;
 	}
 

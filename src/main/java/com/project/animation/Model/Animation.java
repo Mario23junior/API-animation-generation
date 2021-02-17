@@ -4,8 +4,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotEmpty;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Animation {
@@ -23,10 +26,14 @@ public class Animation {
 	@NotEmpty(message = "{campo.descricao}")
 	private String descricao;
 	
+	@JsonIgnore
 	@ManyToOne
+    @JoinColumn(name = "information_id")
 	private Information information;
 	
 	@ManyToOne
+    @JoinColumn(name = "sinops_Info_id" ,nullable = true)
+	@JsonIgnore
 	private SinopsInfo sinopsInfo;
 	
 	public Integer getId() {
@@ -54,7 +61,7 @@ public class Animation {
 		this.descricao = descricao;
 	}
 	public Information getInformation() {
-		return information;
+	      return information;
 	}
 	public void setInformation(Information information) {
 		this.information = information;

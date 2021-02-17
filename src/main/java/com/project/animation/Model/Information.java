@@ -31,7 +31,7 @@ public class Information {
 	@DecimalMin("1")
 	private Integer quantidadeDeEpisodios;
 	
-	@OneToMany(mappedBy = "information",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "information",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Animation> animation;
     	
 	public Integer getId() {
@@ -58,6 +58,5 @@ public class Information {
 	public void setQuantidadeDeEpisodios(Integer quantidadeDeEpisodios) {
 		this.quantidadeDeEpisodios = quantidadeDeEpisodios;
 	}
-		
 	
 }
